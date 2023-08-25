@@ -16,11 +16,9 @@ body{
     background-color: hsl(0, 0%, 98%);
 }
 header{
-  
+
     display: flex;
- 
-    width: 100%;
-    height: 250px;
+    width: 100%; 
     justify-content: space-between;
     align-items: center;
    
@@ -28,9 +26,10 @@ header{
 .nav-list{
     display: flex;
     justify-content: space-between;
+    background-color: white;
     width: 100%;
     padding: 40px;
-    height: 50px;
+    height: 100px;
 }
 .part1{
     display: flex;
@@ -60,9 +59,12 @@ header{
 .features{
     display: flex;
 }
-.burguer{
+.burguer1{
+    position: fixed;
     cursor: pointer;
     display: none;
+    right: 50px;
+   
 }
 
 .bar{
@@ -75,14 +77,25 @@ header{
     transition: all 0.5s ease-in-out;
     
 }
-.burguer.active .bar:nth-child(2){
+.burguer1.active{
+    background-color: white;
+    width: 250px;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    padding-left: 190px;
+    padding-top: 40px;
+    height: 200px;
+    right: 0;
+}
+.burguer1.active .bar:nth-child(2){
     opacity: 0;
     }
-    .burguer.active .bar:nth-child(1){
+    .burguer1.active .bar:nth-child(1){
         transform: translateY(9px) rotate(50deg);
         
      }
-     .burguer.active .bar:nth-child(3){
+     .burguer1.active .bar:nth-child(3){
         transform: translateY(-9px) rotate(-50deg);
         
      }
@@ -93,55 +106,54 @@ header{
     padding-left: 6px;
 }
 .box{
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
-    padding: 20px;
-    left: -600px;
-    top: 170px;
-    gap: 0;
-    background-color: rgba(35, 41, 49, 0.391);
-    text-align: center;
-    flex-direction: column;
-    width: 200px;
-    transform: 0.3s;
+    width: 180px;
+    top: 130px;
+    left: 130px;
+    background-color: white;
+    padding: 1.5rem 2rem 1.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, 
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, 
+    rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    transition: 0.3s;
 }
 .list1.active .box{
-    top: 80px;
-    left: 100px;
-    height: 200px;
+    display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    background-color:white;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.091);
-    border-radius: 10px;
+    top: 100px;
+    left: 130px;
+    visibility: visible;
+    opacity: 1;
 }
 .box2{
     
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
-    padding: 20px;
-    left: -600px;
-    top: 170px;
-    gap: 0;
-    background-color: rgba(35, 41, 49, 0.391);
-    text-align: center;
-    flex-direction: column;
-    width: 200px;
-    transform: 0.3s;
+    width: 160px;
+    top: 140px;
+    left: 350px;
+    background-color: white;
+    padding: 1.5rem 2rem 1.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, 
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, 
+    rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    transition: 0.3s;
     
 }
 .list2.active .box2{
-    top: 80px;
-    left: 350px;
-    width: 150px;
-    height: 140px;
+    display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    background-color:white;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.091);
-    border-radius: 10px;
+    top: 100px;
+    left: 350px;
+    visibility: visible;
+    opacity: 1;
 }
-.list2.active .x .arrow{
+.list2.active .x .arrow2{
     transform: rotate(180deg);
 }
 .list2.active .x{
@@ -266,34 +278,126 @@ margin-right: 50px;
 .list1.active .x{
     align-items: center;
 }
-.list1.active .x .arrow{
+.list1.active .x .arrow2{
     transform: rotate(180deg);
 }
 .sidebar {
     position: fixed;
     top: 100px;
-    right: -300px;
-    width: 300px;
+    right: -900px;
+    width: 250px;
     height: 100vh;
     background-color: white;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    transition: right 0.3s;
+
+    
+}
+.image-3{
+    display: flex;
+
+    justify-content: center;
+}
+.sidebar.active{
+    right: 0;
+}
+.nav-bar-mobile{
+    position: absolute;
+    padding: 20px;
+    right: -600px;
+    top: 65px;
+    gap: 0;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    flex-direction: column;
+    width: 150px;
+    transform: 0.3s;
+}
+.features-mobile.active .nav-bar-mobile{
+    right: 50px
+}
+li{
+    list-style-type: none;
+}
+.nav-bar-mobile li a, .nav-bar-mobile2 li a{
+    text-decoration: none;
+    font-weight: 400;
+    color: hsl(0, 0%, 41%);
+    display: flex;
+    align-items: center;
+}
+.features-mobile.active{
+    margin-bottom: 200px;
+}
+.xm{
+    margin-right: 15px;
+    width: 20px;
+  
+}
+.xd{
+    width: 20px;
+    height: 27px;
+    margin-right: 15px;
+}
+.p-2{
+    font-size: 16px;
+}
+.nav-bar-mobile li{
+    margin-bottom: 20px;
+}
+.sidebar{
+    display: none;
+}
+.features-mobile,.company-mobile{
+    margin-bottom: 20px;
+}
+.lin{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    transition: right 0.3s;
+    text-align: center;
 }
-
-
-
+.lin .register{
+    width: 200px;
+    
+}
+.lin a{
+    text-decoration: none;
+    color: hsl(0, 0%, 41%);
+}
+.features-mobile.active .arrow2{
+   transform: rotate(180deg);
+}
+.arrow2{
+    margin-left: 15px;
+}
+.company-mobile.active .arrow2{
+    transform: rotate(180deg);
+}
 @media screen and (max-width:1000px){
+    .lin{
+        margin-top: 110px;
+    }
+    .text-1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .burguer1{
+        display: none;
+    }
     .list-itens{
         display: none;
+    }
+    .sidebar{
+        display: block;
     }
     .login{
         display: none;
     }
-    .burguer{
+    .burguer1{
         display: block;
     }
     main{
@@ -301,7 +405,7 @@ margin-right: 50px;
         align-items: center;
         margin: 0;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 130px;
     }
     .card1,.card2{
         width: 100%;
@@ -335,7 +439,47 @@ margin-right: 50px;
         padding: 30px;
     }
 
+    .x-1,.x-2{
+        display: flex;
+    }
+    .nav-bar-mobile2{
+        position: absolute;
+        opacity: 0;
+        right: -200px;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 1.5rem 2rem 1.5rem 2rem;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    .company-mobile.active .nav-bar-mobile2{
+        display: flex;
+        flex-direction: column;
+        right: 70px;
+        visibility: visible;
+        opacity: 1;
+    }
+    .nav-bar-mobile2 li{
+        margin-bottom: 20px;
+    }
+   .l1-link1,.l1-link2{
+    font-weight: 400;
+   }
+
 }
+.l1-link2{
+    margin-bottom: 30px;
+}
+.a-2{
+    text-decoration: none;
+    color: hsl(0, 0%, 41%);
+}
+.company-mobile{
+    padding: 10px 10px 10px 0px;
+}
+.company-mobile.active {
+    margin-bottom: 150px;
+}
+
 @media screen and (max-width:600px){
     main{
         width: 100%;
